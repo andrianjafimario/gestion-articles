@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Advanced React Patterns for 2024",
+    "excerpt": "Explore the latest React patterns and best practices for building scalable applications.",
+    "content": "React continues to evolve with new patterns and best practices. This guide covers React Hooks, Server Components, and state management strategies that can help you build more maintainable applications. Learn about composition patterns, compound components, and render props.",
+    "author": "Sarah React Developer",
+    "networkId": "tech-network",
+    "categoryIds": ["react-category"],
+    "featured": false
+  },
+  {
+    "title": "Database Optimization Techniques",
+    "excerpt": "Learn practical techniques to optimize database queries and improve application performance.",
+    "content": "Database optimization is critical for application performance. This article covers indexing strategies, query optimization, connection pooling, and caching techniques. We'll explore how to identify bottlenecks using query analysis tools and implement solutions for common performance issues.",
+    "author": "Michael Database Expert",
+    "networkId": "tech-network",
+    "categoryIds": ["database-category"],
+    "featured": true
+  },
+  {
+    "title": "Strategic Business Planning for Growth",
+    "excerpt": "Develop a strategic plan to accelerate your business growth and market expansion.",
+    "content": "Strategic planning is essential for business growth. This guide covers market analysis, competitive positioning, goal setting, and resource allocation. Learn how to create actionable plans that drive growth while managing risks and adapting to market changes.",
+    "author": "Emily Strategy Consultant",
+    "networkId": "business-network",
+    "categoryIds": ["business-category"],
+    "featured": true
+  }
+]
