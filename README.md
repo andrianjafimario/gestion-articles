@@ -58,6 +58,13 @@ Par défaut:
 - API: `http://localhost:5000`
 - Front: `http://localhost:5173`
 
+## Données de démonstration
+- Fichier d'import JSON (8 articles exemples): `back/sample-articles.json`
+- Catégories et réseaux pré-configurés via le seed backend au démarrage:
+  - Catégories: `Technology`, `Business`, `Lifestyle`
+  - Réseaux: `Tech Enthusiasts`, `Business Leaders`
+- Historique de notifications pré-rempli: 3 notifications d'exemple créées au seed.
+
 ## Choix techniques
 - Architecture choisie et pourquoi
   - Architecture séparée `front` / `back` pour découpler l'UI et l'API, faciliter les tests et le déploiement indépendant.
