@@ -1,29 +1,66 @@
 [
   {
-    "title": "Advanced React Patterns for 2024",
-    "excerpt": "Explore the latest React patterns and best practices for building scalable applications.",
-    "content": "React continues to evolve with new patterns and best practices. This guide covers React Hooks, Server Components, and state management strategies that can help you build more maintainable applications. Learn about composition patterns, compound components, and render props.",
-    "author": "Sarah React Developer",
-    "networkId": "tech-network",
-    "categoryIds": ["react-category"],
-    "featured": false
+    "title": "Moderniser une API Node.js legacy",
+    "excerpt": "Plan d'action pour migrer un backend legacy vers une base TypeScript maintenable.",
+    "content": "Migrer une API Node.js legacy demande une approche incrémentale: ajout du typage, isolation des modules critiques, couverture de tests des services, puis migration route par route. Cette méthode réduit les risques et permet de livrer régulièrement sans interrompre l'exploitation.",
+    "author": "Nora Dupont",
+    "category": "Technology",
+    "network": "Tech Enthusiasts"
   },
   {
-    "title": "Database Optimization Techniques",
-    "excerpt": "Learn practical techniques to optimize database queries and improve application performance.",
-    "content": "Database optimization is critical for application performance. This article covers indexing strategies, query optimization, connection pooling, and caching techniques. We'll explore how to identify bottlenecks using query analysis tools and implement solutions for common performance issues.",
-    "author": "Michael Database Expert",
-    "networkId": "tech-network",
-    "categoryIds": ["database-category"],
-    "featured": true
+    "title": "Sécuriser les endpoints sensibles en 6 étapes",
+    "excerpt": "Checklist pour sécuriser les routes critiques avant mise en production.",
+    "content": "Avant tout déploiement, il faut protéger les routes sensibles avec authentification, contrôle de rôle, validation stricte des payloads et journalisation des erreurs. Ajouter des tests d'autorisation et des audits réguliers réduit fortement les régressions de sécurité.",
+    "author": "Karim El Idrissi",
+    "category": "technology",
+    "network": "Tech Enthusiasts"
   },
   {
-    "title": "Strategic Business Planning for Growth",
-    "excerpt": "Develop a strategic plan to accelerate your business growth and market expansion.",
-    "content": "Strategic planning is essential for business growth. This guide covers market analysis, competitive positioning, goal setting, and resource allocation. Learn how to create actionable plans that drive growth while managing risks and adapting to market changes.",
-    "author": "Emily Strategy Consultant",
-    "networkId": "business-network",
-    "categoryIds": ["business-category"],
-    "featured": true
+    "title": "Piloter la croissance éditoriale par les KPI",
+    "excerpt": "Les indicateurs clés pour prioriser les contenus et optimiser la diffusion.",
+    "content": "Le pilotage éditorial repose sur quelques KPI robustes: taux d'ouverture, engagement, conversion, délai de publication et coût de production. En liant ces métriques à des objectifs trimestriels, l'équipe peut arbitrer plus vite et améliorer l'impact global.",
+    "author": "Camille Martin",
+    "category": "Business",
+    "network": "Business Leaders"
+  },
+  {
+    "title": "Structurer un calendrier éditorial réaliste",
+    "excerpt": "Méthode simple pour planifier des publications régulières sans surcharge d'équipe.",
+    "content": "Un calendrier éditorial efficace combine vision long terme et flexibilité opérationnelle. Il faut distinguer contenus stratégiques, contenus opportunistes et contenus récurrents, puis attribuer des responsabilités claires pour limiter les blocages entre rédaction et validation.",
+    "author": "Laura Bensaid",
+    "category": "business",
+    "network": "Business Leaders"
+  },
+  {
+    "title": "Réduire le temps de publication avec des templates",
+    "excerpt": "Comment standardiser la production sans perdre la qualité rédactionnelle.",
+    "content": "Les templates éditoriaux permettent de réduire les allers-retours, homogénéiser le ton et accélérer la publication. En définissant des structures de titre, chapeau, points clés et CTA, l'équipe gagne en vélocité tout en gardant un niveau de qualité constant.",
+    "author": "Julie Mercier",
+    "category": "Lifestyle",
+    "network": "Business Leaders"
+  },
+  {
+    "title": "Bonnes pratiques UX pour un back-office React",
+    "excerpt": "Rendre les outils internes plus clairs et plus rapides à utiliser au quotidien.",
+    "content": "Un back-office réussi mise sur la lisibilité, des états explicites et des actions batch sécurisées. L'ajout de filtres cohérents, de confirmations adaptées et de feedbacks rapides réduit les erreurs opérateur et améliore sensiblement la productivité.",
+    "author": "Hugo Blanchard",
+    "category": "Technology",
+    "network": "Tech Enthusiasts"
+  },
+  {
+    "title": "Équilibrer productivité et qualité de vie en rédaction",
+    "excerpt": "Approche pragmatique pour maintenir un rythme soutenable sur la durée.",
+    "content": "La performance éditoriale durable passe par des cycles de travail réalistes, des revues de charge fréquentes et une priorisation claire. Mieux vaut livrer moins mais mieux, avec des standards de qualité stables, plutôt que d'accumuler des dettes opérationnelles.",
+    "author": "Sophie Bernard",
+    "category": "lifestyle",
+    "network": "Business Leaders"
+  },
+  {
+    "title": "Automatiser les imports JSON de contenus",
+    "excerpt": "Sécuriser et industrialiser l'intégration de lots d'articles dans le CMS.",
+    "content": "Pour automatiser un import JSON, il faut valider les schémas, mapper proprement catégories et réseaux, tracer les rejets et conserver un rapport d'import exploitable. Cette approche facilite l'onboarding de nouvelles sources et fiabilise les opérations.",
+    "author": "Maya Renaud",
+    "category": "Technology",
+    "network": "Tech Enthusiasts"
   }
 ]

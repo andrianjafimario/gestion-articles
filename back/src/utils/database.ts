@@ -1,5 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-import { ConflictError } from "./errors";
 
 const prisma = new PrismaClient();
 
@@ -258,10 +257,42 @@ export async function initializeDatabase() {
       )
     );
 
+    // Create notification history examples
+    const notifications = await Promise.all([
+      prisma.emailNotification.create({
+        data: {
+          articleId: articles[0].id,
+          recipients: JSON.stringify(["editorial@demo.local", "admin@demo.local"]),
+          subject: "Nouvel article publié: Getting Started with Node.js and TypeScript",
+          status: "sent",
+          sentAt: new Date(Date.now() - 1000 * 60 * 60 * 24),
+        },
+      }),
+      prisma.emailNotification.create({
+        data: {
+          articleId: articles[3].id,
+          recipients: JSON.stringify(["tech-team@demo.local"]),
+          subject: "Alerte contenu: The Future of Artificial Intelligence",
+          status: "sent",
+          sentAt: new Date(Date.now() - 1000 * 60 * 60 * 12),
+        },
+      }),
+      prisma.emailNotification.create({
+        data: {
+          articleId: articles[8].id,
+          recipients: JSON.stringify(["direction@demo.local", "marketing@demo.local"]),
+          subject: "Diffusion Q4: Market Analysis Q4 2024",
+          status: "failed",
+          sentAt: new Date(Date.now() - 1000 * 60 * 45),
+        },
+      }),
+    ]);
+
     console.log("✅ Database initialized successfully!");
     console.log(`   - ${networks.length} networks created`);
     console.log(`   - ${categories.length} categories created`);
     console.log(`   - ${articles.length} articles created`);
+    console.log(`   - ${notifications.length} notifications created`);
   } catch (error) {
     console.error("Error initializing database:", error);
     throw error;
