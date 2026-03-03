@@ -30,6 +30,7 @@ describe("Article Service", () => {
 
   describe("createArticle", () => {
     it("should create a new article successfully", async () => {
+       // 1) Arrange: entrée
       const newArticle = {
         title: "Test Article",
         content: "Test content",
@@ -40,6 +41,7 @@ describe("Article Service", () => {
         featured: false,
       };
 
+        // 2) Arrange: faux retours BDD
       const mockNetwork = { id: "net-1", name: "Tech" };
       const mockCategories = [{ id: "cat-1", name: "Technology" }];
       const mockCreated = {
@@ -53,14 +55,17 @@ describe("Article Service", () => {
         categories: mockCategories,
       };
 
+      // 3) Arrange: comportement des mocks Prisma
       (prisma.network.findUnique as jest.Mock).mockResolvedValue(mockNetwork);
       (prisma.category.findMany as jest.Mock).mockResolvedValue(
         mockCategories
       );
       (prisma.article.create as jest.Mock).mockResolvedValue(mockCreated);
 
+       // 4) Act
       const result = await articleService.createArticle(newArticle);
 
+      // 5) Assert
       expect(result).toEqual(mockCreated);
       expect(prisma.network.findUnique).toHaveBeenCalledWith({
         where: { id: "net-1" },
