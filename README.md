@@ -1,30 +1,31 @@
-# Titre du projet: BackOffice de Gestion des articles
+﻿# Titre du projet: BackOffice de Gestion des articles
 
 ## Description
-Application full-stack de gestion éditoriale permettant de:
-- gérer des articles (création, édition, publication, archivage),
-- administrer catégories et réseaux,
+Application full-stack de gestion Ã©ditoriale permettant de:
+- gÃ©rer des articles (crÃ©ation, Ã©dition, publication, archivage),
+- administrer catÃ©gories et rÃ©seaux,
 - envoyer des notifications email,
 - importer des articles depuis un fichier JSON,
 - visualiser un dashboard de suivi.
 
-Le projet est structuré en deux applications:
+Le projet est structurÃ© en deux applications:
 - `back/`: API REST Node.js + Express + Prisma,
+- `back-django/`: API REST Django + Django REST Framework,
 - `front/`: interface React + Vite.
 
-## Prérequis
-- Node.js version 20 LTS (recommandé)
+## PrÃ©requis
+- Node.js version 20 LTS (recommandÃ©)
 - npm (ou yarn, mais les commandes ci-dessous utilisent npm)
 
 ## Installation
 ```bash
 # Depuis la racine du projet
 
-# 1) Installer les dépendances backend
+# 1) Installer les dÃ©pendances backend
 cd back
 npm install
 
-# 2) Installer les dépendances frontend
+# 2) Installer les dÃ©pendances frontend
 cd ../front
 npm install
 
@@ -37,7 +38,7 @@ cp .env.example .env
 cd ../front
 cp .env.example .env
 
-# 4) Générer le client Prisma et appliquer la migration locale
+# 4) GÃ©nÃ©rer le client Prisma et appliquer la migration locale
 cd ../back
 npm run prisma:generate
 npm run prisma:migrate
@@ -54,53 +55,53 @@ cd front
 npm run dev
 ```
 
-Par défaut:
+Par dÃ©faut:
 - API: `http://localhost:5000`
 - Front: `http://localhost:5173`
 
-## Données de démonstration
+## DonnÃ©es de dÃ©monstration
 - Fichier d'import JSON (8 articles exemples): `back/sample-articles.json`
-- Catégories et réseaux pré-configurés via le seed backend au démarrage:
-  - Catégories: `Technology`, `Business`, `Lifestyle`
-  - Réseaux: `Tech Enthusiasts`, `Business Leaders`
-- Historique de notifications pré-rempli: 3 notifications d'exemple créées au seed.
+- CatÃ©gories et rÃ©seaux prÃ©-configurÃ©s via le seed backend au dÃ©marrage:
+  - CatÃ©gories: `Technology`, `Business`, `Lifestyle`
+  - RÃ©seaux: `Tech Enthusiasts`, `Business Leaders`
+- Historique de notifications prÃ©-rempli: 3 notifications d'exemple crÃ©Ã©es au seed.
 
 ## Choix techniques
 - Architecture choisie et pourquoi
-  - Architecture séparée `front` / `back` pour découpler l'UI et l'API, faciliter les tests et le déploiement indépendant.
-  - Backend organisé en couches `routes -> controllers -> services -> Prisma` pour isoler les responsabilités.
-  - Frontend organisé par pages/modules pour garder une navigation claire (dashboard, articles, catégories, notifications, import).
-- Technologies utilisées et justification
-  - `Express` (API REST simple et rapide à mettre en place).
-  - `Prisma + SQLite` (modélisation claire des données, setup local rapide pour démonstration).
+  - Architecture sÃ©parÃ©e `front` / `back` pour dÃ©coupler l'UI et l'API, faciliter les tests et le dÃ©ploiement indÃ©pendant.
+  - Backend organisÃ© en couches `routes -> controllers -> services -> Prisma` pour isoler les responsabilitÃ©s.
+  - Frontend organisÃ© par pages/modules pour garder une navigation claire (dashboard, articles, catÃ©gories, notifications, import).
+- Technologies utilisÃ©es et justification
+  - `Express` (API REST simple et rapide Ã  mettre en place).
+  - `Prisma + SQLite` (modÃ©lisation claire des donnÃ©es, setup local rapide pour dÃ©monstration).
   - `React + Vite + TypeScript` (DX rapide, typage fort, build moderne).
-  - `Zod` (validation d'entrées côté front et back).
+  - `Zod` (validation d'entrÃ©es cÃ´tÃ© front et back).
   - `Nodemailer` (notifications email).
   - `Jest` (tests unitaires backend sur la couche service).
-- Compromis effectués (si limites de temps)
-  - Authentification/autorisation implémentée côté API mais pas intégrée dans un vrai parcours UX côté frontend (pas d'écran de login dédié).
-  - Protection des routes API non homogène (certaines routes restent accessibles sans middleware d'auth).
-  - Couverture de tests concentrée sur quelques services backend, sans E2E front/back.
+- Compromis effectuÃ©s (si limites de temps)
+  - Authentification/autorisation implÃ©mentÃ©e cÃ´tÃ© API mais pas intÃ©grÃ©e dans un vrai parcours UX cÃ´tÃ© frontend (pas d'Ã©cran de login dÃ©diÃ©).
+  - Protection des routes API non homogÃ¨ne (certaines routes restent accessibles sans middleware d'auth).
+  - Couverture de tests concentrÃ©e sur quelques services backend, sans E2E front/back.
 
-## Fonctionnalités implémentées
-- Dashboard (stats articles/réseaux/catégories + notifications récentes): **complet**
+## FonctionnalitÃ©s implÃ©mentÃ©es
+- Dashboard (stats articles/rÃ©seaux/catÃ©gories + notifications rÃ©centes): **complet**
 - Gestion des articles (CRUD, filtres, tri, pagination, actions en masse): **complet**
-- Gestion des catégories: **complet**
-- Gestion des réseaux: **complet**
+- Gestion des catÃ©gories: **complet**
+- Gestion des rÃ©seaux: **complet**
 - Import JSON d'articles: **complet**
 - Notifications email (envoi + historique): **complet**
-- Authentification JWT (register/login/profile côté API): **partiel**
-- Accès personnalisé selon le rôle utilisateur (ADMIN/EDITOR): **partiel**
-- Parcours d'authentification complet côté interface (login/logout/guard de routes): **non fait**
+- Authentification JWT (register/login/profile cÃ´tÃ© API): **partiel**
+- AccÃ¨s personnalisÃ© selon le rÃ´le utilisateur (ADMIN/EDITOR): **partiel**
+- Parcours d'authentification complet cÃ´tÃ© interface (login/logout/guard de routes): **non fait**
 - Tests E2E (front + back): **non fait**
 
-## Ce qui aurait été fait avec plus de temps
-- 1. Authentification complète côté front (écran login, refresh token, logout, guards de routes).
-- 2. Accès personnalisé selon le rôle utilisateur sur toutes les routes API + gestion des permissions dans l'UI.
-- 3. Sécurisation homogène de toutes les routes sensibles (catégories, réseaux, import, statut, notifications).
+## Ce qui aurait Ã©tÃ© fait avec plus de temps
+- 1. Authentification complÃ¨te cÃ´tÃ© front (Ã©cran login, refresh token, logout, guards de routes).
+- 2. AccÃ¨s personnalisÃ© selon le rÃ´le utilisateur sur toutes les routes API + gestion des permissions dans l'UI.
+- 3. SÃ©curisation homogÃ¨ne de toutes les routes sensibles (catÃ©gories, rÃ©seaux, import, statut, notifications).
 - 4. Tests E2E (Playwright/Cypress) couvrant les parcours critiques.
 - 5. CI/CD (lint, tests, build automatiques sur pull request).
-- 6. Observabilité (logs structurés, métriques, suivi d'erreurs).
+- 6. ObservabilitÃ© (logs structurÃ©s, mÃ©triques, suivi d'erreurs).
 
 ## Tests
 Tests backend disponibles (Jest):
@@ -109,13 +110,19 @@ cd back
 npm test
 ```
 
-Fichiers de test présents notamment sur:
+Fichiers de test prÃ©sents notamment sur:
 - services articles
-- services catégories
+- services catÃ©gories
 - services notifications
 
-## Difficultés rencontrées
-- Encodage/accents (UTF-8) observé dans certains fichiers TypeScript, pouvant dégrader l'affichage des labels/messages.
-  - Solution: standardiser l'encodage UTF-8 et uniformiser l'édition des fichiers.
-- Mise en place d'une sécurité homogène sur toutes les routes API.
-  - Solution partielle actuelle: middleware présent et utilisé sur certaines routes; durcissement global à finaliser.
+## DifficultÃ©s rencontrÃ©es
+- Encodage/accents (UTF-8) observÃ© dans certains fichiers TypeScript, pouvant dÃ©grader l'affichage des labels/messages.
+  - Solution: standardiser l'encodage UTF-8 et uniformiser l'Ã©dition des fichiers.
+- Mise en place d'une sÃ©curitÃ© homogÃ¨ne sur toutes les routes API.
+  - Solution partielle actuelle: middleware prÃ©sent et utilisÃ© sur certaines routes; durcissement global Ã  finaliser.
+
+
+## Variante Django
+Un backend Django parallele a ete ajoute dans `back-django/` pour repartir sur une architecture similaire au backend Node existant, avec JWT, SQLite, CRUD articles/categories/reseaux, notifications et import JSON.
+
+
