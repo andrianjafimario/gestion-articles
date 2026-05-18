@@ -20,6 +20,7 @@ export async function getArticles(filters: ArticleFilter) {
       some: { id: categoryId },
     };
   }
+  //commentaire pour expliquer la logique de filtrage des articles en fonction des critères fournis dans les filtres.
 
   const [articles, total] = await Promise.all([
     prisma.article.findMany({
